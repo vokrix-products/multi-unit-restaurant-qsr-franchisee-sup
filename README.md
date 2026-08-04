@@ -44,3 +44,7 @@ The poller must pass in the raw **PDF file bytes** to `process_file(file_bytes)`
 
 `python3 run_demo.py` — generates a sample PDF and displays extracted records.
 `python3 run_tests.py` — basic import and structure test (no key needed).
+
+Dashboard: https://multi-unit-restaurant-qsr-franchisee-sup.vokrix.co
+Vercel: multi-unit-restaurant-qsr-franchisee-sup
+Railway: 55c14326-497e-4d71-9d21-1a732e7ed0cb
