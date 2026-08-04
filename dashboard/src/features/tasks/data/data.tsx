@@ -1,4 +1,4 @@
-import { TriangleAlert, CircleCheckBig, Clock } from 'lucide-react'
+import { TriangleAlert, CircleCheckBig } from 'lucide-react'
 
 export const labels = [
   {
@@ -43,9 +43,7 @@ export const statuses: {
   icon: typeof TriangleAlert
   severity: Severity
 }[] = [
-  { label: 'Done', value: 'done', icon: CircleCheckBig, severity: 'good' as Severity },
-  { label: 'Pending', value: 'pending', icon: Clock, severity: 'neutral' as Severity },
-  { label: 'Failed', value: 'failed', icon: TriangleAlert, severity: 'critical' as Severity },
-  { label: 'Archived', value: 'archived', icon: Clock, severity: 'neutral' as Severity },
+  { label: 'Price Change Above Threshold', value: 'above_threshold:critical', icon: TriangleAlert, severity: 'critical' as Severity },
+  { label: 'Price Change Within Threshold', value: 'within_threshold:good', icon: CircleCheckBig, severity: 'good' as Severity },
 ]
 // __STATUSES_BLOCK_END__
