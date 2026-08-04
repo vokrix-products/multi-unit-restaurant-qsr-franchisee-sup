@@ -51,3 +51,5 @@ Railway: 55c14326-497e-4d71-9d21-1a732e7ed0cb
 Railway: multi-unit-restaurant-qsr-franchisee-sup
 Cloudflare: multi-unit-restaurant-qsr-franchisee-sup.vokrix.co
 Billing: price_1U0n2c2c9uGCcgMSKdWHPD9i
+
+Landing: https://vokrix.co/multi-unit-restaurant-qsr-franchisee-sup
