@@ -1,19 +1,26 @@
 import os
 import io
 import json
-import pdfplumber
 from openai import OpenAI
 
 PRICE_CHANGE_THRESHOLD_PERCENT = 5.0
 
-def extract_text_from_pdf_bytes(file_bytes: bytes) -> str:
-    with pdfplumber.open(io.BytesIO(file_bytes)) as pdf:
-        full_text = ""
-        for page in pdf.pages:
-            page_text = page.extract_text()
-            if page_text:
-                full_text += page_text + "\n"
-    return full_text
+def extract_text(file_bytes: bytes) -> str:
+    try:
+        import pdfplumber
+        with pdfplumber.open(io.BytesIO(file_bytes)) as pdf:
+            text = ""
+            for page in pdf.pages:
+                t = page.extract_text()
+                if t: text += t + "
+"
+            if text.strip(): return text
+    except Exception:
+        pass
+    try:
+        return file_bytes.decode("utf-8", errors="ignore")
+    except Exception:
+        return ""
 
 def process_file(file_bytes: bytes) -> list[dict]:
     text = extract_text(file_bytes)
