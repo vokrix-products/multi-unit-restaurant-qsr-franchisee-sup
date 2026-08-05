@@ -42,7 +42,7 @@ def download_file(bucket, file_path):
     if file_path.startswith(bucket + "/"):
         file_path = file_path[len(bucket) + 1:]
     url = f"{SUPABASE_URL}/storage/v1/object/{bucket}/{file_path}"
-    resp = requests.get(url, headers={"Authorization": f"Bearer {SUPABASE_SERVICE_KEY}"})
+    resp = requests.get(url, headers={"Authorization": f"Bearer {SUPABASE_SERVICE_KEY}", "apikey": SUPABASE_SERVICE_KEY})
     resp.raise_for_status()
     return resp.content
 
