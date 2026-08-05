@@ -16,7 +16,7 @@ def extract_text_from_pdf_bytes(file_bytes: bytes) -> str:
     return full_text
 
 def process_file(file_bytes: bytes) -> list[dict]:
-    text = extract_text_from_pdf_bytes(file_bytes)
+    text = extract_text(file_bytes)
     if not text.strip():
         return []
 
