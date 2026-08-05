@@ -51,9 +51,9 @@ def upload_result(job_id, records):
     result_bytes = json.dumps(records, default=str).encode("utf-8")
     file_name = f"{job_id}.json"
     url = f"{SUPABASE_URL}/storage/v1/object/{RESULTS_BUCKET}/{file_name}"
-    resp = requests.post(
+    resp = requests.put(
         url,
-        headers={"Authorization": f"Bearer {SUPABASE_SERVICE_KEY}"},
+        headers={"Authorization": f"Bearer {SUPABASE_SERVICE_KEY}", "apikey": SUPABASE_SERVICE_KEY},
         data=result_bytes,
     )
     resp.raise_for_status()
